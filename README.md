@@ -1,1 +1,3 @@
-# Group-Project-1
+Dog Adoption Assistant 
+
+We are building an application that will assist prospective dog owners decided which breed is right for them by choosing from one of five options. Each option, when selected, will display a specific dog breed to the user. Once the breed is displayed, the user is then prompted to enter their ZIP code. When the ZIP code is entered, a list of local animal shelters/adoption centers is displayed. The application utilizes two web-based APIs: the Dogs API, based on the Stanford Dogs Dataset, was used for the stock pictures for each breed, and Adopt-A-Pet was used to find and display local animal shelters. 

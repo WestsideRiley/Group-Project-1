@@ -4,24 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Dog Breed Matcher</title>
 </head>
 <body>
 
     <!-- Title Displayed at top of page -->
-   <header>
+    <header class="container" id="welcome-page">
        <h1>Dog Breed Matching Quiz</h1>
-   </header>
-
+  
    <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
-   <main>
-   <h3>Use this quiz to determine your recommended dog breed.</h3>
-   <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
+        <main>
+        <h3>Use this quiz to determine your recommended dog breed.</h3>
+        <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
 
-   <!-- Start Quiz button to hide instructions and make quiz question visible -->
-   <button type="submit" class="startBtn">Start Quiz</button>
-   
+        <!-- Start Quiz button to hide instructions and make quiz question visible -->
+        <button type="submit" class="startBtn" id="startQuiz">Start Quiz</button>
+        </main>
+    </header>
 
-   </main>
+    <!-- Quiz Container that becomes visible when button submitted -->
+    <section class="container" id="quiz">
+        <h1 id="question"></h1>
+        <article class="container" id="choices">
+            <div class="row">
+                <button type="button" id="0">Bacon & Eggs</button>
+            </div>
+            <div class="row">
+                <button type="button" id="1">Spaghetti</button>
+            </div>
+            <div class="row">
+                <button type="button" id="2">Tacos</button>
+            </div>
+            <div class="row">
+                <button type="button" id="3">Pizza</button>
+            </div>
+            <div class="row">
+                <button type="button" id="4">Steak</button>
+            </div>
+        </article>
+    </section>
+
+    <!-- Enter zip code form for shelters -->
+    <form id="shelter-search">
+        <h3>Enter Your Zip Code Below to Find Local Shelters!</h3>
+        <input type="textarea" id="zipcode" placeholder="Your Zip Code"><br>
+        <button type="button" id="submitZipcode">Search for Shelters</button>
+    </form>
+
+    <!-- List of 3 local shelters near entered zip code with address and phone number-->
+    <section class="container" id="shelters">
+        <ul id="shelterList"></ul>
+    </section>
 </body>
 </html>

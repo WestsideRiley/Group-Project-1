@@ -15,13 +15,18 @@
 
    <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
    <main>
-   <h3>Use this quiz to determine your recommended dog breed.</h3>
-   <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
+   <h3 class="instructions" id="instructions">Use this quiz to determine your recommended dog breed.</h3>
+   <h3 class="instructions" id="instructions">Then, you can enter your zip code to be matched to local shelters!</h3>
 
    <!-- Start Quiz button to hide instructions and make quiz question visible -->
-   <button type="submit" class="startBtn">Start Quiz</button>
+   <button type="submit" class="startBtn" id="startBtn">Start Quiz</button>
+
+   <div class="foodQuiz" id="foodQuiz">
+     <div class="question" id="question"></div>
+   </div>
    
 
    </main>
 </body>
+<script src="./assets/js/script.js"></script>
 </html>

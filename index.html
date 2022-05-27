@@ -13,7 +13,7 @@
     <header class="container" id="welcome-page">
        <h1>Dog Breed Matching Quiz</h1>
   
-   <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
+    <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
         <main>
         <h3>Use this quiz to determine your recommended dog breed.</h3>
         <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
@@ -24,7 +24,7 @@
     </header>
 
     <!-- Quiz Container that becomes visible when button submitted -->
-    <section class="container" id="quiz">
+    <section class="container" id="quiz" style="display:none">
         <h1 id="question">If you could only eat one food for the rest of your life, which would you choose from below?</h1>
         <article class="container" id="choices">
             <div class="row">
@@ -46,7 +46,7 @@
     </section>
 
     <!-- Enter zip code form for shelters when answer appears -->
-    <form id="shelter-search">
+    <form id="shelter-search" style="display: none">
         <h3>Enter Your Zip Code Below to Find Local Shelters!</h3>
         <input type="textarea" id="zipcode" placeholder="Your Zip Code"><br>
         <button type="button" id="submitZipcode">Search for Shelters</button>
@@ -59,4 +59,5 @@
 </body>
 
 <footer>Created by: Patrick Kinsley, Wesley Riley, Ellie Sargent, & Michael Zimmerman 2022</footer>
+<script src="./assets/js/script.js"></script>
 </html>

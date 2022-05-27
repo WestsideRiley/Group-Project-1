@@ -1,4 +1,4 @@
-const startBtn = document.getElementById('startBtn')
+const startBtn = document.getElementById('startQuiz')
 const instructions = document.getElementById('instructions')
 const foodQuiz = document.getElementById('foodQuiz')
 const foodQuestion = document.getElementById('question')

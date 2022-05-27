@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-header, section, form {
+section, form, h1 {
     text-align: center;
 }
 

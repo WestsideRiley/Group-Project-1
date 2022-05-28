@@ -1,5 +1,4 @@
 var startBtn = document.querySelector('#startQuiz')
-var shelterSearchForm = document.querySelector('#shelter-search')
 var zipCode = document.querySelector('#zipcode')
 var searchButton = document.querySelector('#submitZipCode')
 
@@ -12,4 +11,13 @@ function displayQuestion() {
     } else {
         quiz.style.display = 'none';
     }    
+}
+
+function displaySearchForm() {
+    var searchForm = document.getElementById('shelter-search');
+    if (searchForm.style.display == 'none') {
+        searchForm.style.display = 'block';
+    } else {
+        searchForm.style.display = 'none';
+    }
 }

@@ -41,7 +41,7 @@ section, form {
     padding: 15px;
 }
 
-#quiz-image {
+.quiz-image {
    max-width: 100%;
    max-height: 30vh;
 }

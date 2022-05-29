@@ -6,12 +6,12 @@ var imageOne = document.querySelector('#spaghettiImage')
 var imageTwo = document.querySelector('#tacosImage')
 var imageThree = document.querySelector('#pizzaImage')
 var imageFour = document.querySelector('#steakImage')
-var button0 = document.querySelector('#zero')
-var button1 = document.querySelector('#one')
-var button2 = document.querySelector('#two')
-var button3 = document.querySelector('#three')
-var button4 = document.querySelector('#four')
-var button5 = document.querySelector('#five')
+var btn0 = document.querySelector('#zero')
+var btn1 = document.querySelector('#one')
+var btn2 = document.querySelector('#two')
+var btn3 = document.querySelector('#three')
+var bt4 = document.querySelector('#four')
+var btn5 = document.querySelector('#five')
 
 startBtn.addEventListener('click', displayQuestion)
 
@@ -22,7 +22,36 @@ function displayQuestion() {
     } else {
         quiz.style.display = 'none';
     }    
-};
+}
+
+const api_url =
+	"https://dog.ceo/api/breeds/list/all"
+
+    async function getapi(url) {
+	
+        // Storing response
+        const response = await fetch(url);
+        
+        // Storing data in form of JSON
+        var data = await response.json();
+        console.log(data);
+        if (response) {
+            hideloader();
+        }
+        show(data);
+    }
+// Calling that async function
+getapi(api_url);
+
+// Function to define innerHTML for HTML table
+function show(data, block) {	
+	// Loop to access all rows
+	for (let r of data.list) {
+		block += [r.message]
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("storage").innerHTML = block;
+}
 
 
 function displaySearchForm() {

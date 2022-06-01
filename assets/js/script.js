@@ -17,15 +17,18 @@ startBtn.addEventListener('click', displayQuestion)
 
 function displayQuestion() {
     var quiz = document.getElementById('quiz');
+    var welcome = document.getElementById('welcome-page');
     if (quiz.style.display == 'none') {
         quiz.style.display = 'block';
+        welcome.style.display = 'none';
     } else {
         quiz.style.display = 'none';
-    }    
+        welcome.style.display = 'block';
+    } 
 }
 
 const api_url =
-	"https://dog.ceo/api/breeds/list/all"
+	"https://dog.ceo/api/breeds/list/all3"
 
     async function getapi(url) {
 	

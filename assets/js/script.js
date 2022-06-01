@@ -19,11 +19,11 @@ function displayQuestion() {
     var quiz = document.getElementById('quiz');
     var welcome = document.getElementById('welcome-page');
     if (quiz.style.display == 'none') {
-        quiz.style.display = 'block';
+        quiz.style.display = 'inline-block';
         welcome.style.display = 'none';
     } else {
         quiz.style.display = 'none';
-        welcome.style.display = 'block';
+        welcome.style.display = 'inline-block';
     } 
 }
 
@@ -60,7 +60,7 @@ function show(data, block) {
 function displaySearchForm() {
     var searchForm = document.getElementById('shelter-search');
     if (searchForm.style.display == 'none') {
-        searchForm.style.display = 'block';
+        searchForm.style.display = 'inline-block';
     } else {
         searchForm.style.display = 'none';
     }

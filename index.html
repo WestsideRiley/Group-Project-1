@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Dog Breed Matcher</title>
 </head>
+<header class="navigation" id="previousMatches">
+    <a href="./previousmatches.html">View Previous Matches</a></header>
+
 <body>
 
     <header class="navigation" id="previousMatches">
         <a href="./previousmatches.html">View Previous Matches</a>
     </header>
-    
+    <main>
         <!-- Title Displayed at top of page -->
-    <section class="container" id="welcome-page">
+     <section class="container" id="welcome-page">
        <h1>Dog Breed Matching Quiz</h1>
   
    <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
@@ -27,30 +30,23 @@
         <!-- Start Quiz button to hide instructions and make quiz question visible -->
         <button type="submit" class="startBtn" id="startQuiz">Start Quiz</button>
         </main>
-    </section>
+     </section>
 
     <!-- Quiz Container that becomes visible when button submitted -->
-    <section class="container" id="quiz" style="display:none">
+     <section class="container" id="quiz" style="display:none">
         <h1 id="question">If you could only eat one food for the rest of your life, which would you choose from below?</h1>
         <article class="container" id="choices">
             <div class="row">                
                 <button type="button" id="zero"><img id="baconEggsImage" class="quiz-image" src="./images/james-kern-aLDW0oQ0NtU-unsplash.jpg"></button>
-            </div>
-            <div class="row">
                 <button type="button" id="one"><img id="spaghettiImage" class="quiz-image" src="./images/homescreenify-sA3wymYqyaI-unsplash.jpg"></button>
-            </div>
-            <div class="row">
                 <button type="button" id="two"><img id="tacosImage" class="quiz-image" src="./images/krisztian-tabori-ZQf4jzkpz1k-unsplash.jpg"></button>
-            </div>
-            <div class="row">
                 <button type="button" id="three"><img id="pizzaImage" class="quiz-image" src="./images/alan-hardman-SU1LFoeEUkk-unsplash.jpg"></button>
-            </div>
-            <div class="row">
                 <button type="button" id="four"><img id="steakImage" class="quiz-image" src="./images/edson-saldana-J88no2vCrTs-unsplash.jpg"></button>
             </div>
         </article>
-    </section>
-
+     </section>
+    </main>
+     
     <p id="storage">Images will be displayed here</P>
 
     <section class="match" id="matchBreed" style="display:none">
@@ -86,6 +82,7 @@
         <ul id="shelterList"></ul>
     </section>
     <script src="./assets/js/script.js"></script>
+    </main>
 </body>
 
 <footer>Created by: Patrick Kinsley, Wesley Riley, Ellie Sargent 2022</footer>

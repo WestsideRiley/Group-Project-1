@@ -12,10 +12,14 @@ header a {
 
 header {
     padding: 10px;
+    margin-bottom: 10px;
 }
 
-section, form, h1 {
+section, form, h1, article {
     text-align: center;
+    width: 75%;
+    border-radius: 10px;
+    padding-bottom: 10px;
 }
 
 footer {
@@ -33,6 +37,7 @@ body {
 
 section, form {
     background-color: #1EA896;
+    display: inline-block;
 }
 
 .startBtn {
@@ -42,14 +47,13 @@ section, form {
 }
 
 .quiz-image {
-   text-align: center;
-   overflow:hidden;
-   width:300px;
-   height:auto;
+   max-width: 100%;
+   max-height: 30vh;
+   padding: 3px;
 }
 
 #choices {
-    display: flex;
+    display: inline-block;
     justify-content: space-evenly;
 }
 
@@ -149,7 +153,7 @@ section, form {
     }
 }
   
-/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+
   @media only screen and (max-width: 600px) {
     div.example {
       font-size: 30px;

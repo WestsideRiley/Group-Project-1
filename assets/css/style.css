@@ -42,11 +42,116 @@ section, form {
 }
 
 .quiz-image {
-   max-width: 100%;
-   max-height: 30vh;
+   text-align: center;
+   overflow:hidden;
+   width:300px;
+   height:auto;
 }
 
 #choices {
     display: flex;
     justify-content: space-evenly;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    header {
+        max-width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+      background-color: lightblue;
+    }
+}
+
+ @media only screen and (min-width: 601px) {
+    div.example {
+      font-size: 80px;
+    }
+}
+  
+/* If the screen size is 600px or less, set the font-size of <div> to 30px */
+  @media only screen and (max-width: 600px) {
+    div.example {
+      font-size: 30px;
+    }
 }

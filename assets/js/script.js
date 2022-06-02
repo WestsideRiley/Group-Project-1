@@ -65,3 +65,6 @@ function displaySearchForm() {
         searchForm.style.display = 'none';
     }
 }
+
+
+

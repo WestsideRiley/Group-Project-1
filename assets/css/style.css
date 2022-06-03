@@ -2,6 +2,11 @@
     box-sizing: border-box;
 }
 
+.center-objects {
+    display: flex;
+    justify-content: center;
+}
+
 header a {
     text-decoration: none;
     background-color: white;
@@ -15,17 +20,19 @@ header {
     margin-bottom: 10px;
 }
 
-section, form, h1, article {
+section, form, article {
     text-align: center;
     width: 75%;
     border-radius: 10px;
     padding-bottom: 10px;
 }
 
+h1 {
+    text-align: center;
+}
+
 footer {
     display: flex;
-    justify-content: flex-end;
-    float:left;
     color: white;
     padding: 15px;
 }

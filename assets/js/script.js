@@ -21,6 +21,8 @@ btn3.addEventListener('click', passGolden)
 btn4.addEventListener('click', passRottie)
 var quiz = document.getElementById('quiz');
 
+var breedName = document.getElementById('breedName');
+
 function displayQuestion() {
     var welcome = document.getElementById('welcome-page');
     if (quiz.style.display == 'none') {
@@ -60,6 +62,9 @@ function passAussie(){
           console.dir(data[i]);
      
         }});
+
+        breedName.innerHTML="Australian Shepherd";
+        breedFacts.innerHTML=
         console.log("aussie");
 quizResponse();
    
@@ -81,6 +86,8 @@ function passBulldog(){
           console.dir(data[i]);
      
         }});
+        breedName.innerHTML="English Bulldog";
+        breedFacts.innerHTML=
         quizResponse();
         
 }
@@ -101,6 +108,8 @@ function passChihuahua(){
           console.dir(data[i]);
      
         }});
+        breedName.innerHTML="Chihuahua";
+        breedFacts.innerHTML=
         quizResponse();
 }
 
@@ -120,6 +129,8 @@ function passGolden(){
           console.dir(data[i]);
      
         }});
+        breedName.innerHTML="Golden Retriever";
+        breedFacts.innerHTML=
         quizResponse();
 }
 
@@ -139,6 +150,8 @@ function passRottie(){
           console.dir(data[i]);
      
         }});
+        breedName.innerHTML="Rottweiler";
+        breedFacts.innerHTML=
         quizResponse();
 }
 

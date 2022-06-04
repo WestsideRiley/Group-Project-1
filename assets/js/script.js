@@ -30,8 +30,6 @@ function displayQuestion() {
         quiz.style.display = 'none';
         welcome.style.display = 'inline-block';
     } 
-
-    
 }
 
 function passAustralian() {
@@ -54,6 +52,22 @@ fetch(requestUrl)
  
     }});
 }
+
+// function passEnglishBulldog {
+
+// }
+
+// function passChihuahua {
+
+// }
+
+// function passGoldenRetriever {
+
+// }
+
+// function passRottweiler {
+
+// }
 
 // const api_url =
 // 	"https://dog.ceo/api/breeds/list/all3"

@@ -10,18 +10,18 @@ var btn0 = document.querySelector('#zero')
 var btn1 = document.querySelector('#one')
 var btn2 = document.querySelector('#two')
 var btn3 = document.querySelector('#three')
-var bt4 = document.querySelector('#four')
+var btn4 = document.querySelector('#four')
 var btn5 = document.querySelector('#five')
 
 startBtn.addEventListener('click', displayQuestion)
-btn0.addEventListener('click', passAustralian)
-btn1.addEventListener('click', passEnglishBulldog)
+btn0.addEventListener('click', passAussie)
+btn1.addEventListener('click', passBulldog)
 btn2.addEventListener('click', passChihuahua)
-btn3.addEventListener('click', passGoldenRetriever)
-btn4.addEventListener('click', passRottweiler)
+btn3.addEventListener('click', passGolden)
+btn4.addEventListener('click', passRottie)
+var quiz = document.getElementById('quiz');
 
 function displayQuestion() {
-    var quiz = document.getElementById('quiz');
     var welcome = document.getElementById('welcome-page');
     if (quiz.style.display == 'none') {
         quiz.style.display = 'inline-block';
@@ -31,43 +31,116 @@ function displayQuestion() {
         welcome.style.display = 'inline-block';
     } 
 }
+var result = document.getElementById("matchBreed")
+function quizResponse(){
+    quiz.style.display = 'none';
+    result.style.display = 'inline-block';
+    // document.getElementById("storage").classList.remove('none');
+    // document.getElementById("storage").classList.add('show');
+  
+    // document.getElementById("matchBreed").classList.remove('none');
+    // document.getElementById("matchBreed").classList.add('show');
+  
+    // document.getElementById("shelter-search").classList.remove('none');
+    // document.getElementById("shelter-search").classList.add('show');
+  };
 
-function passAustralian() {
+function passAussie(){
     var requestUrl = 'https://dog.ceo/api/breed/australian/images/random';
-
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-     console.log(data);
+    
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+         console.log(data);
+         document.getElementById("storage").src= data.message;
+       
+        for (var i = 0; i < data.length; i++) {
+          console.dir(data[i]);
      
-    var Dogimg = document.createElement("img");
-    Dogimg.src = data.message;
-    var Breedimage = document.getElementById("header");
-    Breedimage.append(Dogimg);
-
-    for (var i = 0; i < data.length; i++) {
-      console.dir(data[i]);
- 
-    }});
+        }});
+        console.log("aussie");
+quizResponse();
+   
 }
 
-// function passEnglishBulldog {
+function passBulldog(){
+    var requestUrl = 'https://dog.ceo/api/breed/bulldog/english/images/random';
+    
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+         console.log(data);
+         
+         document.getElementById("storage").src= data.message;
+    
+        for (var i = 0; i < data.length; i++) {
+          console.dir(data[i]);
+     
+        }});
+        quizResponse();
+        
+}
 
-// }
+function passChihuahua(){
+    var requestUrl = 'https://dog.ceo/api/breed/chihuahua/images/random';
+    
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+         console.log(data);
+         
+         document.getElementById("storage").src= data.message;
+    
+        for (var i = 0; i < data.length; i++) {
+          console.dir(data[i]);
+     
+        }});
+        quizResponse();
+}
 
-// function passChihuahua {
+function passGolden(){
+    var requestUrl = 'https://dog.ceo/api/breed/retriever/golden/images/random';
+    
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+         console.log(data);
+         
+         document.getElementById("storage").src= data.message;
 
-// }
+        for (var i = 0; i < data.length; i++) {
+          console.dir(data[i]);
+     
+        }});
+        quizResponse();
+}
 
-// function passGoldenRetriever {
-
-// }
-
-// function passRottweiler {
-
-// }
+function passRottie(){
+    var requestUrl = 'https://dog.ceo/api/breed/rottweiler/images/random';
+    
+    fetch(requestUrl)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+         console.log(data);
+         
+         document.getElementById("storage").src= data.message;
+    
+        for (var i = 0; i < data.length; i++) {
+          console.dir(data[i]);
+     
+        }});
+        quizResponse();
+}
 
 // const api_url =
 // 	"https://dog.ceo/api/breeds/list/all3"

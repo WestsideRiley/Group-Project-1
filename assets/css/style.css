@@ -74,12 +74,30 @@ button:hover {
     display: inline-block;
 }
 
-.show {
-    display: inline-block;
+img {
+    max-width: 400px;
+    max-height: 400px;
 }
 
-.none {
-    display: none;
+.match {
+    display: flex;
+    justify-content: center;
+}
+
+#submitZipCode {
+    background-color: #FF715B;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+#search-box {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 

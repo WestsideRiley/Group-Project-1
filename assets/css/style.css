@@ -71,6 +71,15 @@ button:hover {
 
 .shelter-container {
     text-align: center;
+    display: inline-block;
+}
+
+.show {
+    display: inline-block;
+}
+
+.none {
+    display: none;
 }
 
 

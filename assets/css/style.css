@@ -74,14 +74,6 @@ button:hover {
     display: inline-block;
 }
 
-.show {
-    display: inline-block;
-}
-
-.none {
-    display: none;
-}
-
 img {
     max-width: 400px;
     max-height: 400px;
@@ -96,6 +88,16 @@ img {
     background-color: #FF715B;
     border-radius: 5px;
     padding: 15px;
+}
+
+#search-box {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 

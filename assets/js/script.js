@@ -1,6 +1,6 @@
 var startBtn = document.querySelector('#startQuiz')
 var zipCode = document.querySelector('#zipcode')
-var searchButton = document.querySelector('#submitZipCode')
+var searchBtn = document.querySelector('#submitZipCode')
 var imageZero = document.querySelector('#baconEggsImage')
 var imageOne = document.querySelector('#spaghettiImage')
 var imageTwo = document.querySelector('#tacosImage')
@@ -14,7 +14,7 @@ var btn4 = document.querySelector('#four')
 var btn5 = document.querySelector('#five')
 
 startBtn.addEventListener('click', displayQuestion)
-searchButton.addEventListener('click', findShelters)
+searchBtn.addEventListener('click', findShelters)
 btn0.addEventListener('click', passAussie)
 btn1.addEventListener('click', passBulldog)
 btn2.addEventListener('click', passChihuahua)
@@ -157,27 +157,54 @@ function passRottie(){
         quizResponse();
 }
 
-function searchButton() {
-    result.style.display = 'none';
-    shelterSearch.style.display = 'inline-block';
+// function searchButton() {
+//     result.style.display = 'none';
+//     shelterSearch.style.display = 'inline-block';
 
-    findShelters();
-}
-function findShelters() {
+//     findShelters();
+// }
+
+function findShelters(event) {
+    event.preventDefault();
+    console.log('working');
     var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
-    var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
-
-    fetch('https://api.petfinder.com/v2/oauth2/token'), {
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById('enter-zipcode').value;
+console.log(postcode);
+fetch('https://api.petfinder.com/v2/oauth2/token', {
 	method: 'POST',
 	body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
 	headers: {
 		'Content-Type': 'application/x-www-form-urlencoded'
 	}
-}.then(function (resp) {
+}).then(function (resp) {
 	return resp.json();
-})
-console.log("hello");
 
+}).then(function (data) {
+	console.log('token', data);
+	return fetch(`https://api.petfinder.com/v2/organizations?location=${postcode}`,  {
+		headers: {
+			'Authorization': data.token_type + ' ' + data.access_token,
+			'Content-Type': 'application/x-www-form-urlencoded'
+		}
+	});
+
+}).then(function (resp) {
+
+	
+	return resp.json();
+
+}).then(function (data) {
+
+	
+	console.log('pets', data);
+
+}).catch(function (err) {
+
+	
+	console.log('something went wrong', err);
+
+});
 }
 
 // const api_url =

@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+header a {
+    text-decoration: none;
+    background-color: white;
+    color: #523F38;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+header {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+section, form, h1, article {
+    text-align: center;
+    width: 75%;
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    float:left;
+    color: white;
+    padding: 15px;
+}
+
+body {
+    background-color: #4C5454;
+    margin: 15px;
+}
+
+section, form {
+    background-color: #1EA896;
+    display: inline-block;
+}
+
+.startBtn {
+    background-color: #FF715B;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.quiz-image {
+   max-width: 100%;
+   max-height: 30vh;
+   padding: 3px;
+}
+
+#choices {
+    display: inline-block;
+    justify-content: space-evenly;
+}
+
+button:hover {
+    background-color:white;
+    cursor:pointer;
+}
+
+.shelter-container {
+    text-align: center;
+}
+
+.dogImg{
+height:500px;
+width: 500px;
+}
+
+.none{
+    display: none;
+}
+
+.show{
+    display: block;
+    min-height: 500px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    header {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+
+@media only screen and (min-width: 992px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+
+@media only screen and (min-width: 1200px) {
+    header {
+        max-width: 100%
+    }
+    .container {
+        max-width: 100%
+    }
+    .match {
+        max-width: 100%
+    }
+    .shelter-search {
+        max-width: 100%
+    }
+    footer {
+        max-width: 100%
+    }
+}
+
+@media only screen and (orientation: landscape) {
+    body {
+      background-color: lightblue;
+    }
+}
+
+ @media only screen and (min-width: 601px) {
+    body {
+      font-size: 20px;
+    }
+}
+  
+
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 30px;
+    }
+}

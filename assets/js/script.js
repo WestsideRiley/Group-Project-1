@@ -14,12 +14,14 @@ var btn4 = document.querySelector('#four')
 var btn5 = document.querySelector('#five')
 
 startBtn.addEventListener('click', displayQuestion)
+searchButton.addEventListener('click', findShelters)
 btn0.addEventListener('click', passAussie)
 btn1.addEventListener('click', passBulldog)
 btn2.addEventListener('click', passChihuahua)
 btn3.addEventListener('click', passGolden)
 btn4.addEventListener('click', passRottie)
 var quiz = document.getElementById('quiz');
+var shelterSearch = document.getElementById('shelterSearch');
 
 var breedName = document.getElementById('breedName');
 
@@ -153,6 +155,29 @@ function passRottie(){
         breedName.innerHTML="Rottweiler";
         breedFacts.innerHTML=
         quizResponse();
+}
+
+function searchButton() {
+    result.style.display = 'none';
+    shelterSearch.style.display = 'inline-block';
+
+    findShelters();
+}
+function findShelters() {
+    var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+    var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+
+    fetch('https://api.petfinder.com/v2/oauth2/token'), {
+	method: 'POST',
+	body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+	headers: {
+		'Content-Type': 'application/x-www-form-urlencoded'
+	}
+}.then(function (resp) {
+	return resp.json();
+})
+console.log("hello");
+
 }
 
 // const api_url =

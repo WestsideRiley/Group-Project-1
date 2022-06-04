@@ -82,6 +82,22 @@ button:hover {
     display: none;
 }
 
+img {
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.match {
+    display: flex;
+    justify-content: center;
+}
+
+#submitZipCode {
+    background-color: #FF715B;
+    border-radius: 5px;
+    padding: 15px;
+}
+
 
 @media only screen and (max-width: 600px) {
     header {

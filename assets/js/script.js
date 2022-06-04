@@ -54,6 +54,8 @@ function passAussie(){
         }});
         console.log("aussie");
 quizResponse();
+
+document.getElementById("breedName").append("Australian Shepherd");
    
 }
 
@@ -73,7 +75,9 @@ function passBulldog(){
           console.dir(data[i]);
      
         }});
-        quizResponse();
+quizResponse();
+
+document.getElementById("breedName").append("Bulldog");
         
 }
 
@@ -93,7 +97,8 @@ function passChihuahua(){
           console.dir(data[i]);
      
         }});
-        quizResponse();
+quizResponse();
+document.getElementById("breedName").append("Chihuahua");
 }
 
 function passGolden(){
@@ -112,7 +117,8 @@ function passGolden(){
           console.dir(data[i]);
      
         }});
-        quizResponse();
+quizResponse();
+document.getElementById("breedName").append("Golden Retriever");
 }
 
 function passRottie(){
@@ -131,7 +137,8 @@ function passRottie(){
           console.dir(data[i]);
      
         }});
-        quizResponse();
+quizResponse();
+document.getElementById("breedName").append("Rottweiler");
 }
 
 function SearchAussie(){

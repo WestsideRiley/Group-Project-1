@@ -35,18 +35,14 @@ function displayQuestion() {
         welcome.style.display = 'inline-block';
     } 
 }
-var result = document.getElementById("matchBreed")
+
+var zip =document.getElementById("shelter-search");
+var result = document.getElementById("matchBreed");
+
 function quizResponse(){
     quiz.style.display = 'none';
     result.style.display = 'inline-block';
-    // document.getElementById("storage").classList.remove('none');
-    // document.getElementById("storage").classList.add('show');
-  
-    // document.getElementById("matchBreed").classList.remove('none');
-    // document.getElementById("matchBreed").classList.add('show');
-  
-    // document.getElementById("shelter-search").classList.remove('none');
-    // document.getElementById("shelter-search").classList.add('show');
+    zip.style.display="inline-block";
   };
 
 function passAussie(){
@@ -69,7 +65,9 @@ function passAussie(){
         breedFacts.innerHTML=
         console.log("aussie");
 quizResponse();
-   
+
+document.getElementById("breedName").append("Australian Shepherd");
+document.getElementById("submitZipcode").addEventListener("click", SearchAussie);
 }
 
 function passBulldog(){
@@ -91,6 +89,9 @@ function passBulldog(){
         breedName.innerHTML="English Bulldog";
         breedFacts.innerHTML=
         quizResponse();
+
+document.getElementById("breedName").append("English Bulldog");
+document.getElementById("submitZipcode").addEventListener("click", SearchBulldog);
         
 }
 
@@ -113,6 +114,9 @@ function passChihuahua(){
         breedName.innerHTML="Chihuahua";
         breedFacts.innerHTML=
         quizResponse();
+
+document.getElementById("breedName").append("Chihuahua");
+document.getElementById("submitZipcode").addEventListener("click", SearchChihuahua);
 }
 
 function passGolden(){
@@ -134,6 +138,9 @@ function passGolden(){
         breedName.innerHTML="Golden Retriever";
         breedFacts.innerHTML=
         quizResponse();
+
+document.getElementById("breedName").append("Golden Retriever");
+document.getElementById("submitZipcode").addEventListener("click", SearchGolden);
 }
 
 function passRottie(){
@@ -155,6 +162,9 @@ function passRottie(){
         breedName.innerHTML="Rottweiler";
         breedFacts.innerHTML=
         quizResponse();
+
+document.getElementById("breedName").append("Rottweiler");
+document.getElementById("submitZipcode").addEventListener("click", SearchRottie);
 }
 
 // function searchButton() {
@@ -206,6 +216,240 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 
 });
 }
+
+//functions for pinging the secondapi once the zipcode button is hit
+{
+function SearchAussie(){
+  var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById("zipcode").value; 
+var breed= "Australian Shepherd"
+
+if (postcode===null){
+  document.getElementById()
+}
+
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+method: 'POST',
+body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+headers: {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+}).then(function (resp) {
+return resp.json();
+
+}).then(function (data) {
+console.log('token', data);
+return fetch('https://api.petfinder.com/v2/animals?location=' + postcode + '&breed=' + breed, {
+  headers: {
+    'Authorization': data.token_type + ' ' + data.access_token,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+}).then(function (resp) {
+
+
+return resp.json();
+
+}).then(function (data) {
+
+
+console.log('pets', data);
+
+}).catch(function (err) {
+
+
+console.log('something went wrong', err);
+
+});
+}
+
+function SearchBulldog(){
+  var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById("zipcode").value; 
+var breed= "English Bulldog"
+
+if (postcode===null){
+  document.getElementById()
+}
+
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+method: 'POST',
+body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+headers: {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+}).then(function (resp) {
+return resp.json();
+
+}).then(function (data) {
+console.log('token', data);
+return fetch('https://api.petfinder.com/v2/animals?location=' + postcode + '&breed=' + breed, {
+  headers: {
+    'Authorization': data.token_type + ' ' + data.access_token,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+}).then(function (resp) {
+
+
+return resp.json();
+
+}).then(function (data) {
+
+
+console.log('pets', data);
+
+}).catch(function (err) {
+
+
+console.log('something went wrong', err);
+
+});
+}
+
+function SearchChihuahua(){
+  var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById("zipcode").value; 
+var breed= "Chihuahua"
+
+if (postcode===null){
+  document.getElementById()
+}
+
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+method: 'POST',
+body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+headers: {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+}).then(function (resp) {
+return resp.json();
+
+}).then(function (data) {
+console.log('token', data);
+return fetch('https://api.petfinder.com/v2/animals?location=' + postcode + '&breed=' + breed, {
+  headers: {
+    'Authorization': data.token_type + ' ' + data.access_token,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+}).then(function (resp) {
+
+
+return resp.json();
+
+}).then(function (data) {
+
+
+console.log('pets', data);
+
+}).catch(function (err) {
+
+
+console.log('something went wrong', err);
+
+});
+}
+
+function SearchGolden(){
+  var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById("zipcode").value; 
+var breed= "Golden Retriever"
+
+if (postcode===null){
+  document.getElementById()
+}
+
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+method: 'POST',
+body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+headers: {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+}).then(function (resp) {
+return resp.json();
+
+}).then(function (data) {
+console.log('token', data);
+return fetch('https://api.petfinder.com/v2/animals?location=' + postcode + '&breed=' + breed, {
+  headers: {
+    'Authorization': data.token_type + ' ' + data.access_token,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+}).then(function (resp) {
+
+
+return resp.json();
+
+}).then(function (data) {
+
+
+console.log('pets', data);
+
+}).catch(function (err) {
+
+
+console.log('something went wrong', err);
+
+});
+}
+
+function SearchRottie(){
+  var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
+var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
+var postcode= document.getElementById("zipcode").value; 
+var breed= "Rottweiler"
+
+if (postcode===null){
+  document.getElementById()
+}
+
+fetch('https://api.petfinder.com/v2/oauth2/token', {
+method: 'POST',
+body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
+headers: {
+  'Content-Type': 'application/x-www-form-urlencoded'
+}
+}).then(function (resp) {
+return resp.json();
+
+}).then(function (data) {
+console.log('token', data);
+return fetch('https://api.petfinder.com/v2/animals?location=' + postcode + '&breed=' + breed, {
+  headers: {
+    'Authorization': data.token_type + ' ' + data.access_token,
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+});
+
+}).then(function (resp) {
+
+
+return resp.json();
+
+}).then(function (data) {
+
+
+console.log('pets', data);
+
+}).catch(function (err) {
+
+
+console.log('something went wrong', err);
+
+});
+}
+}
+
 
 // const api_url =
 // 	"https://dog.ceo/api/breeds/list/all3"

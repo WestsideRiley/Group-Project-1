@@ -14,14 +14,7 @@ var btn4 = document.querySelector('#four');
 var btn5 = document.querySelector('#five');
 var submitZip = document.querySelector("#submitZipCode");
 
-startBtn.addEventListener('click', displayQuestion);
-searchBtn.addEventListener('click', findShelters);
-btn0.addEventListener('click', passAussie);
-btn1.addEventListener('click', passBulldog);
-btn2.addEventListener('click', passChihuahua);
-btn3.addEventListener('click', passGolden);
-btn4.addEventListener('click', passRottie);
-submitZip.addEventListener("click", zipResponse);
+
 
 var quiz = document.getElementById('quiz');
 var shelterSearch = document.getElementById('shelterSearch');
@@ -64,13 +57,15 @@ function passAussie(){
          console.log(data);
 
          document.getElementById("storage").src= data.message;
-         var Aussie="Australian Sheperd";
+         const Aussie= {
+           breed:"Australian Sheperd",
+         }
          localStorage.setItem('Aussie', JSON.stringify(Aussie));
 
          var previousMatchesList = getElementById("matchesList");
 
           for (var i = 0, length = localStorage.length; i < length; ++i) {
-          var element = document.createElement("p")
+          var element = document.createElement("li")
           element.textContent = localStorage.getItem(localStorage.breed(i))
           previousMatchesList.appendChild(element)
           }
@@ -113,7 +108,10 @@ function passBulldog(){
          console.log(data); 
 
          document.getElementById("storage").src= data.message;
-         const Bulldog= "English Bulldog";
+         const Bulldog= {
+          breed:"English Bulldog",
+         
+        }
         window.localStorage.setItem('English Bulldog', JSON.stringify(Bulldog));
         
     
@@ -149,7 +147,10 @@ function passChihuahua(){
          console.log(data); 
 
          document.getElementById("storage").src= data.message;
-         const Chihuahua= "Chihuahua";
+         const Chihuahua= {
+          breed:"Chihuahua",
+          
+        }
         window.localStorage.setItem('Chihuahua', JSON.stringify(Chihuahua));
       
     
@@ -184,7 +185,10 @@ function passGolden(){
          console.log(data);
          
          document.getElementById("storage").src= data.message;
-         const Golden= "Golden Retriever";
+         const Golden= {
+          breed:"Golden Retriever",
+          
+        }
         window.localStorage.setItem('Golden Retriever', JSON.stringify(Golden));
         
 
@@ -219,7 +223,10 @@ function passRottie(){
          console.log(data);
          
          document.getElementById("storage").src= data.message;
-         const Rottie= "Rottweiler";
+         const Rottie= {
+          breed:"Rottweiler",
+          
+        }
         window.localStorage.setItem('Rottweiler', JSON.stringify(Rottie));
 
     
@@ -585,10 +592,47 @@ console.log('something went wrong', err);
 }
 
 var breed = JSON.parse( localStorage.getItem('breed' ) );
-  
+
+var previousMatchesList = document.getElementById("matchesList");
 
 
+{
+var element1 = document.createElement("li");
+var element2 = document.createElement("li");
+var element3 = document.createElement("li");
+var element4 = document.createElement("li");
+var element5 = document.createElement("li");
+
+var AussieMatch = localStorage.getItem("Aussie");
+var BullyMatch = localStorage.getItem("English Bulldog");
+var ChihuahuaMatch=localStorage.getItem("Chihuahua");
+var GoldenMatch=localStorage.getItem("Golden Retriever");
+var RottieMatch=localStorage.getItem("Rottweiler");
 
 
+if(AussieMatch!==null){
+  previousMatchesList.appendChild(element1);
+}
+if(BullyMatch!==null){
+  previousMatchesList.appendChild(element2);
+}
+if(ChihuahuaMatch!==null){
+  previousMatchesList.appendChild(element3);
+}
+if(GoldenMatch!==null){
+  previousMatchesList.appendChild(element4);
+}
+if(RottieMatch!==null){
+previousMatchesList.appendChild(element5);
+}
+
+element1.append(AussieMatch);
+element2.append(BullyMatch);
+element3.append(ChihuahuaMatch);
+element4.append(GoldenMatch);
+element5.append(RottieMatch);
+
+
+}
 
 

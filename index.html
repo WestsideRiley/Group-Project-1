@@ -59,7 +59,7 @@
                 <div class="grid-x grid-padding-x" id="search-box">
                   <div class="medium-6 cell">
                     <label class="bold">Enter Your Zip Code Below to Find Local Shelters!
-                      <input type="text" placeholder="Your Zip Code" id="enter-zipcode">
+                      <input type="text" placeholder="Your Zip Code" id="enter-zipcode" minlength="5" maxlength="5">
                     </label>
                     <button id="submitZipCode">Search</button>
                   </div>
@@ -80,6 +80,7 @@
 
     <!-- List of 3 local shelters near entered zip code with address and phone number-->
     <section class="shelter-container" id="shelters" style="display:none">
+        <h2>See your local Shelters Below!</h2>
         <ul id="shelterList"></ul>
     </section>
     <script src="./assets/js/script.js"></script>

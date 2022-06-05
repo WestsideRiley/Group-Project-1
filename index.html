@@ -45,15 +45,19 @@
      </section>
     </main>
 
+<!-- Card with photo of breed and fun facts -->
     <section class="match" id="matchBreed" style="display:none">
         <div class="basic-card">
             <div class="basic-card-image" id="image">
               <img id="storage">
             </div>
             <div class="basic-card-content content callout secondary">
-              <h5 id="breedName">Dog Breed Name Goes Here</h5>
-              <p id="breedFacts">Information about the dog breed matched with goes here</p>
+              <h2 id="breedName">Dog Breed Name Goes Here</h2>
+              <p id="breedFacts"></p>
             </div>
+
+            <!-- Enter zip code form for shelters when answer appears -->
+
             <form id="shelterSearch">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x" id="search-box">
@@ -69,31 +73,17 @@
           </div>         
     </section>
 
-    <!-- Enter zip code form for shelters when answer appears -->
-    
-
-    <!-- <form id="shelter-search" class= "shelter-search" style="display:none">
-        <h3>Enter Your Zip Code Below to Find Local Shelters!</h3>
-        <input type="textarea" id="zipcode" placeholder="Your Zip Code"><br>
-        <button type="button" id="submitZipcode">Search for Shelters</button>
-    </form> -->
-
-    <!-- List of 3 local shelters near entered zip code with address and phone number-->
+    <!-- List of local shelters near entered zip code -->
     <section class="shelter-container" id="shelters" style="display:none">
         <div id="shelterDogs"></div>
         <div id="localDogs"></div>
         <h2>See your local Shelters Below!</h2>
         <ul id="shelterList"></ul>
+
     </section>
     <script src="./assets/js/script.js"></script>
 
     <footer class="names">Created by: Patrick Kinsley, Wesley Riley, Ellie Sargent 2022</footer>
     </main>
-
-
 </body>
-
-
-
-
 </html>

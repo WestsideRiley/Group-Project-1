@@ -26,9 +26,11 @@ submitZip.addEventListener("click", zipResponse);
 var quiz = document.getElementById('quiz');
 var shelterSearch = document.getElementById('shelterSearch');
 var breedName = document.getElementById('breedName');
+var breedFacts = document.getElementById('breedFacts')
 var zip =document.getElementById("shelter-search");
 var result = document.getElementById("matchBreed");
 var Shelterlist =document.getElementById("shelters")
+
 
 function displayQuestion() {
     var welcome = document.getElementById('welcome-page');
@@ -48,9 +50,9 @@ function quizResponse(){
 
 function zipResponse(){
   Shelterlist.style.display="inline-block"
-
-  
+  result.style.display = 'none';
 };
+
 
 function passAussie(){
     var requestUrl = 'https://dog.ceo/api/breed/australian/images/random';
@@ -69,7 +71,16 @@ function passAussie(){
         }});
 
         breedName.innerHTML="Australian Shepherd";
-        breedFacts.innerHTML=
+
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("The breed actually originated in Spain, not Australia."));
+        li2.appendChild(document.createTextNode("They often have two different colored eyes."));
+        li3.appendChild(document.createTextNode("Native Americans consider them sacred."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         console.log("aussie");
 quizResponse();
 
@@ -93,7 +104,15 @@ function passBulldog(){
      
         }});
         breedName.innerHTML="English Bulldog";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("Famous English Bulldog owners include Adam Sandler, Winston Churchill, and President Calvin Coolidge."));
+        li2.appendChild(document.createTextNode("Bulldogs rank in the Top 5 Most Popular Breeds according to the American Kennel Club."));
+        li3.appendChild(document.createTextNode("An English Bulldog named Tillman holds the Guinness World Record for the fastest 100 meters on a skateboard by a dog."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
@@ -118,7 +137,15 @@ function passChihuahua(){
      
         }});
         breedName.innerHTML="Chihuahua";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They are named for the Mexican state, Chihuahua, where they were originally bred."));
+        li2.appendChild(document.createTextNode("They are extremely smart and can be very successful in obedience and agility."));
+        li3.appendChild(document.createTextNode("They are very loyal and tend to be mistrustful of strangers."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
@@ -142,7 +169,15 @@ function passGolden(){
      
         }});
         breedName.innerHTML="Golden Retriever";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They can hold an egg in their mouth without cracking it."));
+        li2.appendChild(document.createTextNode("Their history can be traced back to Scotland."));
+        li3.appendChild(document.createTextNode("They make great therapy dogs."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
@@ -166,19 +201,20 @@ function passRottie(){
      
         }});
         breedName.innerHTML="Rottweiler";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They descend from Ancient Roman dogs."));
+        li2.appendChild(document.createTextNode("They were originally use to guard cattles/livestock as well as money for cattlemen."));
+        li3.appendChild(document.createTextNode("In the 1900s, they became largely police dogs."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
 submitZip.addEventListener("click", SearchRottie);
 }
-
-// function searchButton() {
-//     result.style.display = 'none';
-//     shelterSearch.style.display = 'inline-block';
-
-//     findShelters();
-// }
 
 function findShelters(event) {
     event.preventDefault();
@@ -223,6 +259,7 @@ for (var i = 0; i < 20; i++) {
   var listItem =document.createElement('li');
   listItem.textContent = data.organizations[i].website;
   repoList.append(listItem)
+
 }
 }
 

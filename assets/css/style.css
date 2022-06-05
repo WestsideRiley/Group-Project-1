@@ -41,6 +41,7 @@ body {
     background-color: #4C5454;
     margin: 15px;
 }
+
 ul {
     list-style-type: none;
 }
@@ -82,8 +83,8 @@ img {
     max-height: 400px;
 }
 
-.match {
-    display: flex;
+.basic-card {
+    display: inline-block;
     justify-content: center;
 }
 
@@ -94,7 +95,7 @@ img {
 }
 
 #search-box {
-    display: inline-block;
+    display: flex;
     justify-content: center;
     width: 100%;
 }
@@ -102,6 +103,8 @@ img {
 .bold {
     font-weight: bold;
 }
+
+
 
 
 

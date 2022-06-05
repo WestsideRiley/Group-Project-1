@@ -26,9 +26,11 @@ submitZip.addEventListener("click", zipResponse);
 var quiz = document.getElementById('quiz');
 var shelterSearch = document.getElementById('shelterSearch');
 var breedName = document.getElementById('breedName');
+var breedFacts = document.getElementById('breedFacts')
 var zip =document.getElementById("shelter-search");
 var result = document.getElementById("matchBreed");
 var Shelterlist =document.getElementById("shelters")
+
 
 function displayQuestion() {
     var welcome = document.getElementById('welcome-page');
@@ -79,12 +81,21 @@ function passAussie(){
         }});
 
         breedName.innerHTML="Australian Shepherd";
-        breedFacts.innerHTML= "This is a very nice dog."
+
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("The breed actually originated in Spain, not Australia."));
+        li2.appendChild(document.createTextNode("They often have two different colored eyes."));
+        li3.appendChild(document.createTextNode("Native Americans consider them sacred."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         console.log("aussie");
 
 quizResponse();
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchAussie);
+submitZip.addEventListener("click", SearchAussie);
 }
 
 function passBulldog(){
@@ -110,11 +121,19 @@ function passBulldog(){
      
         }});
         breedName.innerHTML="English Bulldog";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("Famous English Bulldog owners include Adam Sandler, Winston Churchill, and President Calvin Coolidge."));
+        li2.appendChild(document.createTextNode("Bulldogs rank in the Top 5 Most Popular Breeds according to the American Kennel Club."));
+        li3.appendChild(document.createTextNode("An English Bulldog named Tillman holds the Guinness World Record for the fastest 100 meters on a skateboard by a dog."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchBulldog);
+submitZip.addEventListener("click", SearchBulldog);
         
 }
 
@@ -141,11 +160,19 @@ function passChihuahua(){
      
         }});
         breedName.innerHTML="Chihuahua";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They are named for the Mexican state, Chihuahua, where they were originally bred."));
+        li2.appendChild(document.createTextNode("They are extremely smart and can be very successful in obedience and agility."));
+        li3.appendChild(document.createTextNode("They are very loyal and tend to be mistrustful of strangers."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchChihuahua);
+submitZip.addEventListener("click", SearchChihuahua);
 }
 
 function passGolden(){
@@ -171,11 +198,19 @@ function passGolden(){
      
         }});
         breedName.innerHTML="Golden Retriever";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They can hold an egg in their mouth without cracking it."));
+        li2.appendChild(document.createTextNode("Their history can be traced back to Scotland."));
+        li3.appendChild(document.createTextNode("They make great therapy dogs."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchGolden);
+submitZip.addEventListener("click", SearchGolden);
 }
 
 function passRottie(){
@@ -200,19 +235,20 @@ function passRottie(){
      
         }});
         breedName.innerHTML="Rottweiler";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("They descend from Ancient Roman dogs."));
+        li2.appendChild(document.createTextNode("They were originally use to guard cattles/livestock as well as money for cattlemen."));
+        li3.appendChild(document.createTextNode("In the 1900s, they became largely police dogs."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchRottie);
+submitZip.addEventListener("click", SearchRottie);
 }
-
-// function searchButton() {
-//     result.style.display = 'none';
-//     shelterSearch.style.display = 'inline-block';
-
-//     findShelters();
-// }
 
 function findShelters(event) {
     event.preventDefault();
@@ -238,11 +274,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 			'Content-Type': 'application/x-www-form-urlencoded'
       
 		}
-	})
-
-  
-
-  ;
+	});
 
 }).then(function (resp) {
 
@@ -261,6 +293,7 @@ for (var i = 0; i < 20; i++) {
   var listItem =document.createElement('li');
   listItem.textContent = data.organizations[i].website;
   repoList.append(listItem)
+
 }
 }
 
@@ -312,6 +345,16 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Australian Shepherds and Australian Shepherd Mixes in your area!")
+
 }).catch(function (err) {
 
 
@@ -357,6 +400,16 @@ return resp.json();
 
 
 console.log('pets', data);
+
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the English Bulldogs and English Bulldog Mixes in your area!")
 
 }).catch(function (err) {
 
@@ -404,6 +457,17 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Chihuahuas and Chihuahua Mixes in your area!")
+
+
 }).catch(function (err) {
 
 
@@ -449,6 +513,17 @@ return resp.json();
 
 
 console.log('pets', data);
+
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Golden Retrievers and Golden Retriever Mixes in your area!")
+
 
 }).catch(function (err) {
 
@@ -496,6 +571,17 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Rottweilers and Rottweiler Mixes in your area!")
+
+
 }).catch(function (err) {
 
 
@@ -510,45 +596,6 @@ var breed = JSON.parse( localStorage.getItem('breed' ) );
 
 
 
-
-// const api_url =
-// 	"https://dog.ceo/api/breeds/list/all3"
-
-//     async function getapi(url) {
-	
-//         // Storing response
-//         const response = await fetch(url);
-        
-//         // Storing data in form of JSON
-//         var data = await response.json();
-//         console.log(data);
-//         if (response) {
-//             hideloader();
-//         }
-//         show(data);
-//     }
-// // Calling that async function
-// getapi(api_url);
-
-// // Function to define innerHTML for HTML table
-// function show(data, block) {	
-// 	// Loop to access all rows
-// 	for (let r of data.list) {
-// 		block += [r.message]
-// 	}
-// 	// Setting innerHTML as tab variable
-// 	document.getElementById("storage").innerHTML = block;
-// }
-
-
-// function displaySearchForm() {
-//     var searchForm = document.getElementById('shelter-search');
-//     if (searchForm.style.display == 'none') {
-//         searchForm.style.display = 'inline-block';
-//     } else {
-//         searchForm.style.display = 'none';
-//     }
-// }
 
 
 

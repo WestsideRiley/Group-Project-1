@@ -15,6 +15,17 @@ header a {
     padding: 10px;
 }
 
+li{
+    max-width: 100%;
+    font-size: medium;
+}
+
+.center-horizontal {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 header {
     padding: 10px;
     margin-bottom: 10px;
@@ -43,6 +54,7 @@ body {
 }
 ul {
     list-style-type: none;
+    margin-left: 0;
 }
 
 section, form {
@@ -84,7 +96,7 @@ img {
 
 .match {
     display: flex;
-    justify-content: center;
+ 
 }
 
 #submitZipCode {

@@ -67,7 +67,7 @@ function passAussie(){
          var Aussie="Australian Sheperd";
          localStorage.setItem('Aussie', JSON.stringify(Aussie));
 
-         var previousMatchesList = getElementById("matchesList");
+        
 
           for (var i = 0, length = localStorage.length; i < length; ++i) {
           var element = document.createElement("p")
@@ -96,7 +96,7 @@ function passAussie(){
 
 quizResponse();
 
-savePreviousMatches();
+
 
 submitZip.addEventListener("click", SearchAussie);
 }

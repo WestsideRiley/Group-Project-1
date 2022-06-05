@@ -124,9 +124,9 @@ function passChihuahua(){
         var li1 = document.createElement('li')
         var li2 = document.createElement('li')
         var li3 = document.createElement('li')
-        li1.appendChild(document.createTextNode(""));
-        li2.appendChild(document.createTextNode(""));
-        li3.appendChild(document.createTextNode(""));
+        li1.appendChild(document.createTextNode("They are named for the Mexican state, Chihuahua, where they were originally bred."));
+        li2.appendChild(document.createTextNode("They are extremely smart and can be very successful in obedience and agility."));
+        li3.appendChild(document.createTextNode("They are very loyal and tend to be mistrustful of strangers."));
         breedFacts.appendChild(li1);
         breedFacts.appendChild(li2);
         breedFacts.appendChild(li3);
@@ -153,9 +153,9 @@ function passGolden(){
         var li1 = document.createElement('li')
         var li2 = document.createElement('li')
         var li3 = document.createElement('li')
-        li1.appendChild(document.createTextNode(""));
-        li2.appendChild(document.createTextNode(""));
-        li3.appendChild(document.createTextNode(""));
+        li1.appendChild(document.createTextNode("They can hold an egg in their mouth without cracking it."));
+        li2.appendChild(document.createTextNode("Their history can be traced back to Scotland."));
+        li3.appendChild(document.createTextNode("They make great therapy dogs."));
         breedFacts.appendChild(li1);
         breedFacts.appendChild(li2);
         breedFacts.appendChild(li3);
@@ -182,9 +182,9 @@ function passRottie(){
         var li1 = document.createElement('li')
         var li2 = document.createElement('li')
         var li3 = document.createElement('li')
-        li1.appendChild(document.createTextNode(""));
-        li2.appendChild(document.createTextNode(""));
-        li3.appendChild(document.createTextNode(""));
+        li1.appendChild(document.createTextNode("They descend from Ancient Roman dogs."));
+        li2.appendChild(document.createTextNode("They were originally use to guard cattles/livestock as well as money for cattlemen."));
+        li3.appendChild(document.createTextNode("In the 1900s, they became largely police dogs."));
         breedFacts.appendChild(li1);
         breedFacts.appendChild(li2);
         breedFacts.appendChild(li3);

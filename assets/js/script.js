@@ -31,11 +31,17 @@ function displayQuestion() {
         welcome.style.display = 'inline-block';
     } 
 }
-var result = document.getElementById("matchBreed")
+
+var zip =document.getElementById("shelter-search");
+var result = document.getElementById("matchBreed");
+         
 function quizResponse(){
     quiz.style.display = 'none';
     result.style.display = 'inline-block';
+    zip.style.display="inline-block"
  };
+
+
 
 function passAussie(){
     var requestUrl = 'https://dog.ceo/api/breed/australian/images/random';
@@ -56,6 +62,7 @@ function passAussie(){
 quizResponse();
 
 document.getElementById("breedName").append("Australian Shepherd");
+document.getElementById("submitZipcode").addEventListener("click", SearchAussie);
    
 }
 
@@ -77,7 +84,8 @@ function passBulldog(){
         }});
 quizResponse();
 
-document.getElementById("breedName").append("Bulldog");
+document.getElementById("breedName").append("English Bulldog");
+document.getElementById("submitZipcode").addEventListener("click", SearchBulldog);
         
 }
 
@@ -99,6 +107,8 @@ function passChihuahua(){
         }});
 quizResponse();
 document.getElementById("breedName").append("Chihuahua");
+
+document.getElementById("submitZipcode").addEventListener("click", SearchChihuahua);
 }
 
 function passGolden(){
@@ -119,6 +129,7 @@ function passGolden(){
         }});
 quizResponse();
 document.getElementById("breedName").append("Golden Retriever");
+document.getElementById("submitZipcode").addEventListener("click", SearchGolden);
 }
 
 function passRottie(){
@@ -139,8 +150,11 @@ function passRottie(){
         }});
 quizResponse();
 document.getElementById("breedName").append("Rottweiler");
+document.getElementById("submitZipcode").addEventListener("click", SearchRottie);
 }
 
+//functions for pinging the secondapi once the zipcode button is hit
+{
 function SearchAussie(){
   var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
 var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
@@ -191,7 +205,7 @@ function SearchBulldog(){
   var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
 var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
 var postcode= document.getElementById("zipcode").value; 
-var breed= "Bulldog"
+var breed= "English Bulldog"
 
 if (postcode===null){
   document.getElementById()
@@ -232,7 +246,6 @@ console.log('something went wrong', err);
 
 });
 }
-
 
 function SearchChihuahua(){
   var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
@@ -280,7 +293,6 @@ console.log('something went wrong', err);
 });
 }
 
-
 function SearchGolden(){
   var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
 var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
@@ -327,7 +339,6 @@ console.log('something went wrong', err);
 });
 }
 
-
 function SearchRottie(){
   var key="QgUTHMdZwhct5j7wnu8KxKlTaEewDetmMCQhkaksGfhUoMS5aR";
 var secret="1HSFJTiD4BTCHA5AdAVPhgiIq8PLOTUBL37TG2al";
@@ -373,7 +384,7 @@ console.log('something went wrong', err);
 
 });
 }
-
+}
 
 
 // const api_url =

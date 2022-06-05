@@ -49,7 +49,8 @@ function quizResponse(){
 };
 
 function zipResponse(){
-  Shelterlist.style.display="inline-block"  
+  Shelterlist.style.display="inline-block"
+  result.style.display = 'none';  
 };
 
 

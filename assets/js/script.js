@@ -73,7 +73,7 @@ function passAussie(){
         console.log("aussie");
 quizResponse();
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchAussie);
+submitZip.addEventListener("click", SearchAussie);
 }
 
 function passBulldog(){
@@ -97,7 +97,7 @@ function passBulldog(){
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchBulldog);
+submitZip.addEventListener("click", SearchBulldog);
         
 }
 
@@ -122,7 +122,7 @@ function passChihuahua(){
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchChihuahua);
+submitZip.addEventListener("click", SearchChihuahua);
 }
 
 function passGolden(){
@@ -146,7 +146,7 @@ function passGolden(){
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchGolden);
+submitZip.addEventListener("click", SearchGolden);
 }
 
 function passRottie(){
@@ -170,7 +170,7 @@ function passRottie(){
         quizResponse();
 
 
-document.getElementById("enter-zipcode").addEventListener("click", SearchRottie);
+submitZip.addEventListener("click", SearchRottie);
 }
 
 // function searchButton() {
@@ -204,11 +204,7 @@ fetch('https://api.petfinder.com/v2/oauth2/token', {
 			'Content-Type': 'application/x-www-form-urlencoded'
       
 		}
-	})
-
-  
-
-  ;
+	});
 
 }).then(function (resp) {
 
@@ -278,6 +274,16 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Australian Shepherds and Australian Shepherd Mixes in your area!")
+
 }).catch(function (err) {
 
 
@@ -323,6 +329,16 @@ return resp.json();
 
 
 console.log('pets', data);
+
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the English Bulldogs and English Bulldog Mixes in your area!")
 
 }).catch(function (err) {
 
@@ -370,6 +386,17 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Chihuahuas and Chihuahua Mixes in your area!")
+
+
 }).catch(function (err) {
 
 
@@ -415,6 +442,17 @@ return resp.json();
 
 
 console.log('pets', data);
+
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Golden Retrievers and Golden Retriever Mixes in your area!")
+
 
 }).catch(function (err) {
 
@@ -462,6 +500,17 @@ return resp.json();
 
 console.log('pets', data);
 
+for (var i = 0; i < 5; i++) {
+  var imageSection = document.getElementById('localDogs');
+  var imgItem =document.createElement('img');
+  imgItem.src = data.animals[i].photos[0].small;
+  imageSection.append(imgItem);
+
+}
+var shelterDogs =document.getElementById("shelterDogs");
+shelterDogs.append("Look at the Rottweilers and Rottweiler Mixes in your area!")
+
+
 }).catch(function (err) {
 
 
@@ -471,45 +520,6 @@ console.log('something went wrong', err);
 }
 }
 
-
-// const api_url =
-// 	"https://dog.ceo/api/breeds/list/all3"
-
-//     async function getapi(url) {
-	
-//         // Storing response
-//         const response = await fetch(url);
-        
-//         // Storing data in form of JSON
-//         var data = await response.json();
-//         console.log(data);
-//         if (response) {
-//             hideloader();
-//         }
-//         show(data);
-//     }
-// // Calling that async function
-// getapi(api_url);
-
-// // Function to define innerHTML for HTML table
-// function show(data, block) {	
-// 	// Loop to access all rows
-// 	for (let r of data.list) {
-// 		block += [r.message]
-// 	}
-// 	// Setting innerHTML as tab variable
-// 	document.getElementById("storage").innerHTML = block;
-// }
-
-
-// function displaySearchForm() {
-//     var searchForm = document.getElementById('shelter-search');
-//     if (searchForm.style.display == 'none') {
-//         searchForm.style.display = 'inline-block';
-//     } else {
-//         searchForm.style.display = 'none';
-//     }
-// }
 
 
 

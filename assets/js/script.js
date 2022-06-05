@@ -47,10 +47,11 @@ function quizResponse(){
 };
 
 function zipResponse(){
-  Shelterlist.style.display="inline-block"
-
-  
+  Shelterlist.style.display="inline-block"  
 };
+
+var breed = localStorage.getItem("breed");
+document.getElementById("matchesList").value="breed";
 
 function passAussie(){
     var requestUrl = 'https://dog.ceo/api/breed/australian/images/random';
@@ -61,7 +62,16 @@ function passAussie(){
       })
       .then(function (data) {
          console.log(data);
+
          document.getElementById("storage").src= data.message;
+         const Aussie= {
+           breed:"Australian Sheperd",
+           facts: "This is a nice dog."
+         }
+         localStorage.setItem('Aussie', JSON.stringify(Aussie));
+
+         display(breed);
+         
        
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -69,8 +79,9 @@ function passAussie(){
         }});
 
         breedName.innerHTML="Australian Shepherd";
-        breedFacts.innerHTML=
+        breedFacts.innerHTML= "This is a very nice dog."
         console.log("aussie");
+
 quizResponse();
 
 document.getElementById("enter-zipcode").addEventListener("click", SearchAussie);
@@ -84,9 +95,15 @@ function passBulldog(){
         return response.json();
       })
       .then(function (data) {
-         console.log(data);
-         
+         console.log(data); 
+
          document.getElementById("storage").src= data.message;
+         const Bulldog= {
+          breed:"English Bulldog",
+          facts: "This is a nice dog."
+        }
+        window.localStorage.setItem('English Bulldog', JSON.stringify(Bulldog));
+        
     
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -109,9 +126,15 @@ function passChihuahua(){
         return response.json();
       })
       .then(function (data) {
-         console.log(data);
-         
+         console.log(data); 
+
          document.getElementById("storage").src= data.message;
+         const Chihuahua= {
+          breed:"Chihuahua",
+          facts: "This is a nice dog."
+        }
+        window.localStorage.setItem('Chihuahua', JSON.stringify(Chihuahua));
+      
     
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -136,6 +159,12 @@ function passGolden(){
          console.log(data);
          
          document.getElementById("storage").src= data.message;
+         const Golden= {
+          breed:"Golden Retriever",
+          facts: "This is a nice dog."
+        }
+        window.localStorage.setItem('Golden Retriever', JSON.stringify(Golden));
+        
 
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -160,6 +189,11 @@ function passRottie(){
          console.log(data);
          
          document.getElementById("storage").src= data.message;
+         const Rottie= {
+          breed:"Rottweiler",
+          facts: "This is a nice dog."
+        }
+        window.localStorage.setItem('Rottweiler', JSON.stringify(Rottie));
     
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -470,6 +504,11 @@ console.log('something went wrong', err);
 });
 }
 }
+
+var breed = JSON.parse( localStorage.getItem('breed' ) );
+  
+
+
 
 
 // const api_url =

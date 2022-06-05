@@ -50,8 +50,7 @@ function quizResponse(){
 
 function zipResponse(){
   Shelterlist.style.display="inline-block"
-
-  
+  result.style.display = 'none';
 };
 
 
@@ -217,13 +216,6 @@ function passRottie(){
 document.getElementById("enter-zipcode").addEventListener("click", SearchRottie);
 }
 
-// function searchButton() {
-//     result.style.display = 'none';
-//     shelterSearch.style.display = 'inline-block';
-
-//     findShelters();
-// }
-
 function findShelters(event) {
     event.preventDefault();
     console.log('working');
@@ -271,6 +263,7 @@ for (var i = 0; i < 20; i++) {
   var listItem =document.createElement('li');
   listItem.textContent = data.organizations[i].website;
   repoList.append(listItem)
+
 }
 }
 
@@ -514,46 +507,5 @@ console.log('something went wrong', err);
 });
 }
 }
-
-
-// const api_url =
-// 	"https://dog.ceo/api/breeds/list/all3"
-
-//     async function getapi(url) {
-	
-//         // Storing response
-//         const response = await fetch(url);
-        
-//         // Storing data in form of JSON
-//         var data = await response.json();
-//         console.log(data);
-//         if (response) {
-//             hideloader();
-//         }
-//         show(data);
-//     }
-// // Calling that async function
-// getapi(api_url);
-
-// // Function to define innerHTML for HTML table
-// function show(data, block) {	
-// 	// Loop to access all rows
-// 	for (let r of data.list) {
-// 		block += [r.message]
-// 	}
-// 	// Setting innerHTML as tab variable
-// 	document.getElementById("storage").innerHTML = block;
-// }
-
-
-// function displaySearchForm() {
-//     var searchForm = document.getElementById('shelter-search');
-//     if (searchForm.style.display == 'none') {
-//         searchForm.style.display = 'inline-block';
-//     } else {
-//         searchForm.style.display = 'none';
-//     }
-// }
-
 
 

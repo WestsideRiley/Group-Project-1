@@ -24,6 +24,7 @@ var quiz = document.getElementById('quiz');
 var shelterSearch = document.getElementById('shelterSearch');
 
 var breedName = document.getElementById('breedName');
+var breedFacts = document.getElementById('breedFacts')
 
 function displayQuestion() {
     var welcome = document.getElementById('welcome-page');
@@ -39,14 +40,6 @@ var result = document.getElementById("matchBreed")
 function quizResponse(){
     quiz.style.display = 'none';
     result.style.display = 'inline-block';
-    // document.getElementById("storage").classList.remove('none');
-    // document.getElementById("storage").classList.add('show');
-  
-    // document.getElementById("matchBreed").classList.remove('none');
-    // document.getElementById("matchBreed").classList.add('show');
-  
-    // document.getElementById("shelter-search").classList.remove('none');
-    // document.getElementById("shelter-search").classList.add('show');
   };
 
 function passAussie(){
@@ -66,7 +59,16 @@ function passAussie(){
         }});
 
         breedName.innerHTML="Australian Shepherd";
-        breedFacts.innerHTML=
+
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("The breed actually originated in Spain, not Australia."));
+        li2.appendChild(document.createTextNode("They often have two different colored eyes."));
+        li3.appendChild(document.createTextNode("Native Americans consider them sacred."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         console.log("aussie");
 quizResponse();
    
@@ -89,7 +91,15 @@ function passBulldog(){
      
         }});
         breedName.innerHTML="English Bulldog";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode("Famous English Bulldog owners include Adam Sandler, Winston Churchill, and President Calvin Coolidge."));
+        li2.appendChild(document.createTextNode("Bulldogs rank in the Top 5 Most Popular Breeds according to the American Kennel Club."));
+        li3.appendChild(document.createTextNode("An English Bulldog named Tillman holds the Guinness World Record for the fastest 100 meters on a skateboard by a dog."));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
         
 }

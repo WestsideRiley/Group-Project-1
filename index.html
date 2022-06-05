@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/foundation.css">
     <link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -46,8 +47,8 @@
     </main>
 
 <!-- Card with photo of breed and fun facts -->
-    <section class="match" id="matchBreed" style="display:none">
-        <div class="basic-card">
+    <section class="match center-horizontal" id="matchBreed" style="display:none">
+        <div class="basic-card align-center">
             <div class="basic-card-image" id="image">
               <img id="storage">
             </div>
@@ -58,12 +59,12 @@
 
             <!-- Enter zip code form for shelters when answer appears -->
 
-            <form id="shelterSearch">
+            <form id="shelterSearch center-horizontal">
               <div class="grid-container">
                 <div class="grid-x grid-padding-x" id="search-box">
-                  <div class="medium-6 cell">
-                    <label class="bold">Enter Your Zip Code Below to Find Local Shelters!
-                      <input type="text" placeholder="Your Zip Code" id="enter-zipcode" minlength="5" maxlength="5">
+                  <div class="medium-6 cell center-horizontal">
+                    <label class="bold center-horizontal">Enter Your Zip Code Below to Find Local Shelters!
+                      <input type="text" placeholder="Your Zip Code" id="enter-zipcode" class="center-horizontal" minlength="5" maxlength="5">
                     </label>
                     <button id="submitZipCode">Search</button>
                   </div>
@@ -74,7 +75,7 @@
     </section>
 
     <!-- List of local shelters near entered zip code -->
-    <section class="shelter-container" id="shelters" style="display:none">
+    <section class="shelter-container center-horizontal" id="shelters" style="display:none">
         <div id="shelterDogs"></div>
         <div id="localDogs"></div>
         <h2>See your local Shelters Below!</h2>

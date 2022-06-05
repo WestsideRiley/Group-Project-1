@@ -121,7 +121,15 @@ function passChihuahua(){
      
         }});
         breedName.innerHTML="Chihuahua";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode(""));
+        li2.appendChild(document.createTextNode(""));
+        li3.appendChild(document.createTextNode(""));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 }
 
@@ -142,7 +150,15 @@ function passGolden(){
      
         }});
         breedName.innerHTML="Golden Retriever";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode(""));
+        li2.appendChild(document.createTextNode(""));
+        li3.appendChild(document.createTextNode(""));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 }
 
@@ -163,7 +179,15 @@ function passRottie(){
      
         }});
         breedName.innerHTML="Rottweiler";
-        breedFacts.innerHTML=
+        var li1 = document.createElement('li')
+        var li2 = document.createElement('li')
+        var li3 = document.createElement('li')
+        li1.appendChild(document.createTextNode(""));
+        li2.appendChild(document.createTextNode(""));
+        li3.appendChild(document.createTextNode(""));
+        breedFacts.appendChild(li1);
+        breedFacts.appendChild(li2);
+        breedFacts.appendChild(li3);
         quizResponse();
 }
 

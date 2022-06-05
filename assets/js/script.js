@@ -52,8 +52,6 @@ function zipResponse(){
   Shelterlist.style.display="inline-block"  
 };
 
-var breed = localStorage.getItem("breed");
-document.getElementById("matchesList").value="breed";
 
 function passAussie(){
     var requestUrl = 'https://dog.ceo/api/breed/australian/images/random';
@@ -68,12 +66,17 @@ function passAussie(){
          document.getElementById("storage").src= data.message;
          const Aussie= {
            breed:"Australian Sheperd",
-           facts: "This is a nice dog."
          }
          localStorage.setItem('Aussie', JSON.stringify(Aussie));
 
-         display(breed);
-         
+         var previousMatchesList = getElementById("matchesList");
+
+          for (var i = 0, length = localStorage.length; i < length; ++i) {
+          var element = document.createElement("p")
+          element.textContent = localStorage.getItem(localStorage.breed(i))
+          previousMatchesList.appendChild(element)
+          }
+                 
        
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);
@@ -95,8 +98,11 @@ function passAussie(){
 
 quizResponse();
 
+savePreviousMatches();
+
 submitZip.addEventListener("click", SearchAussie);
 }
+
 
 function passBulldog(){
     var requestUrl = 'https://dog.ceo/api/breed/bulldog/english/images/random';
@@ -111,7 +117,7 @@ function passBulldog(){
          document.getElementById("storage").src= data.message;
          const Bulldog= {
           breed:"English Bulldog",
-          facts: "This is a nice dog."
+         
         }
         window.localStorage.setItem('English Bulldog', JSON.stringify(Bulldog));
         
@@ -150,7 +156,7 @@ function passChihuahua(){
          document.getElementById("storage").src= data.message;
          const Chihuahua= {
           breed:"Chihuahua",
-          facts: "This is a nice dog."
+          
         }
         window.localStorage.setItem('Chihuahua', JSON.stringify(Chihuahua));
       
@@ -188,7 +194,7 @@ function passGolden(){
          document.getElementById("storage").src= data.message;
          const Golden= {
           breed:"Golden Retriever",
-          facts: "This is a nice dog."
+          
         }
         window.localStorage.setItem('Golden Retriever', JSON.stringify(Golden));
         
@@ -226,9 +232,10 @@ function passRottie(){
          document.getElementById("storage").src= data.message;
          const Rottie= {
           breed:"Rottweiler",
-          facts: "This is a nice dog."
+          
         }
         window.localStorage.setItem('Rottweiler', JSON.stringify(Rottie));
+
     
         for (var i = 0; i < data.length; i++) {
           console.dir(data[i]);

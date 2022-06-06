@@ -4,24 +4,87 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/foundation.css">
+    <link href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Dog Breed Matcher</title>
 </head>
+
 <body>
 
-    <!-- Title Displayed at top of page -->
-   <header>
+    <header class="navigation" id="previousMatches">
+        <a href="./previousmatches.html">View Previous Matches</a>
+    </header>
+    <main class="center-objects">
+        <!-- Title Displayed at top of page -->
+     <section class="container" id="welcome-page">
        <h1>Dog Breed Matching Quiz</h1>
-   </header>
-
+  
    <!-- Main section where instructions will be, start button, as well as quiz will appear with button click -->
-   <main>
-   <h3>Use this quiz to determine your recommended dog breed.</h3>
-   <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
+        <main>
+        <h3>Use this quiz to determine your recommended dog breed.</h3>
+        <h3>Then, you can enter your zip code to be matched to local shelters!</h3>
 
-   <!-- Start Quiz button to hide instructions and make quiz question visible -->
-   <button type="submit" class="startBtn">Start Quiz</button>
-   
+        <!-- Start Quiz button to hide instructions and make quiz question visible -->
+        <button type="submit" class="startBtn" id="startQuiz">Start Quiz</button>
+        </main>
+     </section>
 
-   </main>
+    <!-- Quiz Container that becomes visible when button submitted -->
+     <section class="container" id="quiz" style="display:none">
+        <h1 id="question">If you could only eat one food for the rest of your life, which would you choose from below?</h1>
+        <article class="container" id="choices">
+            <div class="row">                
+                <button type="button" id="zero"><img id="baconEggsImage" class="quiz-image" src="./images/james-kern-aLDW0oQ0NtU-unsplash.jpg"></button>
+                <button type="button" id="one"><img id="spaghettiImage" class="quiz-image" src="./images/homescreenify-sA3wymYqyaI-unsplash.jpg"></button>
+                <button type="button" id="two"><img id="tacosImage" class="quiz-image" src="./images/krisztian-tabori-ZQf4jzkpz1k-unsplash.jpg"></button>
+                <button type="button" id="three"><img id="pizzaImage" class="quiz-image" src="./images/alan-hardman-SU1LFoeEUkk-unsplash.jpg"></button>
+                <button type="button" id="four"><img id="steakImage" class="quiz-image" src="./images/edson-saldana-J88no2vCrTs-unsplash.jpg"></button>
+            </div>
+        </article>
+     </section>
+    </main>
+
+<!-- Card with photo of breed and fun facts -->
+    <section class="match center-horizontal" id="matchBreed" style="display:none">
+        <div class="basic-card align-center">
+            <div class="basic-card-image" id="image">
+              <img id="storage">
+            </div>
+            <div class="basic-card-content content callout secondary">
+              <h2 id="breedName">Dog Breed Name Goes Here</h2>
+              <p id="breedFacts"></p>
+            </div>
+
+            <!-- Enter zip code form for shelters when answer appears -->
+
+            <form id="shelterSearch center-horizontal">
+              <div class="grid-container">
+                <div class="grid-x grid-padding-x" id="search-box">
+                  <div class="medium-6 cell center-horizontal">
+                    <label class="bold center-horizontal">Enter Your Zip Code Below to Find Local Shelters!
+                      <input type="text" placeholder="Your Zip Code" id="enter-zipcode" class="center-horizontal" minlength="5" maxlength="5">
+                    </label>
+                    <button id="submitZipCode">Search</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>         
+    </section>
+
+    <!-- List of local shelters near entered zip code -->
+    <section class="shelter-container center-horizontal" id="shelters" style="display:none">
+        <div id="shelterDogs"></div>
+        <div id="localDogs"></div>
+        <h2>See your local Shelters Below!</h2>
+        <ul id="shelterList"></ul>
+
+    </section>
+    <script src="./assets/js/script.js"></script>
+
+    <footer class="names">Created by: Patrick Kinsley, Wesley Riley, Ellie Sargent 2022</footer>
+    </main>
 </body>
 </html>

@@ -18,9 +18,10 @@ An application that will assist prospective dog owners in being matched to a dog
 https://westsideriley.github.io/Group-Project-1/
 
 ## Screen Recording of User Experience:
-*add screen recording when completed*
+https://user-images.githubusercontent.com/100548768/172076221-c91272cf-ed3b-4c95-b14a-ec5a0a3fc43e.mov
+
 
 ## Primary Group Responsibilities:
-* Patrick Kinsley: Javascript
-* Wesley Riley: Javascript, APIs
-* Ellie Sargent: HTML, CSS, Foundation
+* Patrick Kinsley: Javascript, APIs
+* Wesley Riley: Javascript, APIs, CSS
+* Ellie Sargent: HTML, CSS, Javascript
